@@ -17,6 +17,7 @@ import { UserhomeComponent } from './userhome/userhome.component';
 import { UrlshortnerComponent } from './urlshortner/urlshortner.component';
 import { UrlListComponent } from './url-list/url-list.component';
 import { ChartComponent } from './chart/chart.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ import { ChartComponent } from './chart/chart.component';
     BrowserAnimationsModule,
     ToastrModule.forRoot()
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
