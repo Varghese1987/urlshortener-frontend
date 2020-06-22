@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="card-body">
+        <h5 class="card-title">Generate your short url here</h5>
+        <form [formGroup]="urlForm" (ngSubmit)="convert()">
+            <div class="form-group">
+                <span style="color: red" *ngIf="!urlForm.get('url').valid && urlForm.get('url').dirty">Enter the link in
+                    below text box to generate short url</span>
+                <input
+                    [ngClass]="{'error': !urlForm.get('url').valid && urlForm.get('url').dirty, 'correct': urlForm.get('url').valid}"
+                    formControlName="url" type="text" class="form-control" placeholder="Enter your URL here">
+            </div>
+            <input type="submit" class="btn btn-primary" [disabled]="urlForm.invalid" value="Convert">
+        </form>
+    </div>
+</div>

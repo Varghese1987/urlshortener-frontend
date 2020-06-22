@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+.homeCaption {
+    font-family: 'Russo One', sans-serif;
+    font-size: 45px;
+}
+.center{
+	position: absolute;
+	top: 55%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 400px;
+	background: white;
+	border-radius: 10px;
+	box-sizing: border-box;
+	-webkit-box-shadow: 10px 10px 58px -1px rgba(77,92,250,1);
+	-moz-box-shadow: 10px 10px 58px -1px rgba(77,92,250,1);
+	box-shadow: 10px 10px 58px -1px rgba(77,92,250,1);
+    padding-bottom: 40px;
+    padding-top: 20px;
+}

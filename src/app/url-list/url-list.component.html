@@ -1,0 +1,12 @@
+<div class="container-fluid">    
+    <div class="row">
+        <div class="col-lg-5">
+            <div class=""*ngFor = "let data of urlList | async">
+                <div class="card-body card bg-dark text-white">
+                    <h6 class="card-title">Long Url : {{data.longUrl}}</h6>
+                    <h6 class="card-title">Short Url : {{data.shortUrl}}</h6>        
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
