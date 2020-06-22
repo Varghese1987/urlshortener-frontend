@@ -52,7 +52,7 @@ urlForm: FormGroup;
     
     this.userService.addUrl(obj).subscribe((response)=>{
       console.log(response)
-      this.router.navigate(["/"]);
+      this.router.navigate(["/userhome"]);
       this.toastr.success("success! check url list for converted links");
     })
   }
