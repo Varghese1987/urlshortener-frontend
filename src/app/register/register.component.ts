@@ -15,11 +15,11 @@ export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
 
   constructor(
-    private userService:UserService, 
-    private router : Router,
+    private userService:UserService,    
     private fb:FormBuilder, 
     private http:HttpClient,
-    private toastr : ToastrService
+    private toastr : ToastrService,
+    private router : Router,
     ) {
     this.registerForm = this.fb.group({
       firstName:this.fb.control("",Validators.required),

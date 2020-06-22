@@ -3,6 +3,8 @@ import { UserService } from '../user.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import * as moment from 'moment';
+import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-urlshortner',
@@ -14,7 +16,13 @@ data;
 locationAndOtherDetails;
 date;
 urlForm: FormGroup;
-  constructor(private userService : UserService,private fb:FormBuilder, private http:HttpClient) {
+  constructor(
+    private userService : UserService,
+    private fb:FormBuilder, 
+    private http:HttpClient,
+    private toastr : ToastrService,
+    private router : Router,
+    ) {
     this.urlForm = this.fb.group({
       url:this.fb.control("",Validators.required),
     })
@@ -44,6 +52,8 @@ urlForm: FormGroup;
     
     this.userService.addUrl(obj).subscribe((response)=>{
       console.log(response)
+      this.router.navigate(["/"]);
+      this.toastr.success("success! check url list for converted links");
     })
   }
 
