@@ -32,8 +32,8 @@ export class ActivateuserComponent implements OnInit {
     this.userservice.activateUser(this.data).subscribe((response)=>{
       console.log(response);
       this.toastr.success(response.message, 'Good Day!');
+      this.router.navigate(["/"]);
     })
-    this.router.navigate(["/"]);
   }
 
 }
