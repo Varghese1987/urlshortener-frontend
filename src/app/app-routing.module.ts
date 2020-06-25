@@ -30,7 +30,7 @@ const routes: Routes = [
     component:SendmailComponent
   },
   {
-    path:"resetpwd",
+    path:"resetpwd/:string",
     component:ResetpwdComponent
   },
   {

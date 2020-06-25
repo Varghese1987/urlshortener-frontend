@@ -32,10 +32,14 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
   register(){
-    this.userService.addUser(this.registerForm.value).subscribe((response)=>{
-      console.log(response)
+    this.userService.addUser(this.registerForm.value).subscribe(response =>{
+      //console.log(response)
       this.router.navigate(["/"]);
       this.toastr.success("Check your mail for activation link!");   
+    },
+    error =>{
+      //console.log(error.error.message)
+      alert(`${error.error.message} - Pls Login to make use of the service`)
     })
   }
 

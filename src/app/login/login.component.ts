@@ -32,13 +32,13 @@ export class LoginComponent implements OnInit {
     this.userService.userLogin(this.loginForm.value).subscribe( response =>{
       localStorage.setItem('responseToken',response['token']);
       localStorage.setItem('responseId',response['userId'])
-      console.log(response)
+      //console.log(response)
       this.router.navigate(["/userhome"]);
       this.toastr.success("welcome!");   
     },
     error =>{
-      console.log(error.error.message)
-      alert(`${error.error.message} Pls Login with correct details or if you are a new user pls register and then login to proceed further`)
+      //console.log(error.error.message)
+      alert(`${error.error.message} - Pls Login with correct details or if you are a new user pls register and then login to proceed further`)
     }
     )
     

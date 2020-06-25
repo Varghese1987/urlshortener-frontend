@@ -24,7 +24,7 @@ export class UserService {
   }
 
   updatepwd(pwdDetail,string):Observable<any>{
-    return this.http.post(`${environment.apiUrl}/reset-password/${string}`,pwdDetail)
+    return this.http.put(`${environment.apiUrl}/reset-password/${string}`,pwdDetail)
   }
 
   activateUser(string):Observable<any>{

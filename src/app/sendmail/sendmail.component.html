@@ -1,1 +1,33 @@
-<p>sendmail works!</p>
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-weight-normal">URL Shortner</h5>
+    <nav class="my-2 my-md-0 mr-md-3">
+        <a class="btn btn-outline-primary" routerLink="/">Home</a>
+        <a class="btn btn-outline-primary" routerLink="/login">Login</a>
+        <a class="btn btn-outline-primary" routerLink="/register">Sign up</a>
+    </nav>
+</div>
+<div class="container center">
+
+    <form class="form-signin" [formGroup]="resetForm" (ngSubmit)="mailtriger()">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="form-group">
+                    <h1 class="h3 mb-3 font-weight-normal text-center">Please Enter the email and submit</h1>
+                    <span style="color: red"
+                        *ngIf="!resetForm.get('email').valid && resetForm.get('email').dirty">*</span>
+                    <input
+                        [ngClass]="{'error': !resetForm.get('email').valid && resetForm.get('email').dirty, 'correct': resetForm.get('email').valid}"
+                        formControlName="email" type="email" class="form-control" placeholder="Email address">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <input type="submit" class="btn btn-primary" [disabled]="resetForm.invalid">
+            </div>
+        </div>
+
+    </form>
+
+</div>
