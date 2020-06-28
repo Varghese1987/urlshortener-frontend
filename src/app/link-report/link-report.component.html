@@ -1,0 +1,21 @@
+<p>Click on the respective URLs to get reports on the same!</p>
+<div class="" *ngIf="isData">
+    <div class="">
+        <p>{{urlData.date}}</p>
+        <h6 class="">{{urlData.longUrl}}</h6>
+        <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="urlData.shortUrl" placeholder="content will be copy after click the copy button">
+            <span class="input-group-btn">
+              <button class="btn btn-outline-primary" [class.btn-success]= "isCopied1" type="button" ngxClipboard [cbContent]="urlData.shortUrl" (cbOnSuccess)="isCopied1 = true">copy</button>
+            </span>
+          </div>
+    </div>
+    <!-- <div class="container">
+      <div class="row">
+          <div class="col-lg-12" >
+              <canvas id="ctx">{{myDoughnutChart}}</canvas>
+          </div>
+      </div>
+    </div> -->
+</div>
+

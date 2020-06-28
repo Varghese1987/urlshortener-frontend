@@ -48,6 +48,14 @@ export class UserService {
       })
     )
   }
+  getLinkCount(): Observable<any>{
+    return this.http.get(`${environment.apiUrl}/chartData/${localStorage.responseId}`).pipe(
+      catchError(err =>{
+        alert(err.error.message)
+        return throwError(err);
+      })
+    )
+  }
 
   addUrl(urlDetail):Observable<any>{
     return this.http.post(`${environment.apiUrl}/shortUrl`,urlDetail);

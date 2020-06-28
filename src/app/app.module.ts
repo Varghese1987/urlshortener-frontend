@@ -18,6 +18,10 @@ import { UrlshortnerComponent } from './urlshortner/urlshortner.component';
 import { UrlListComponent } from './url-list/url-list.component';
 import { ChartComponent } from './chart/chart.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { ChartsModule } from 'ng2-charts';
+import { DashBoardComponent } from './dash-board/dash-board.component';
+import { LinkReportComponent } from './link-report/link-report.component'; 
+import { ClipboardModule } from 'ngx-clipboard';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,9 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     UserhomeComponent,
     UrlshortnerComponent,
     UrlListComponent,
-    ChartComponent
+    ChartComponent,
+    DashBoardComponent,
+    LinkReportComponent
   ],
   imports: [
     BrowserModule,
@@ -40,8 +46,10 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    ChartsModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    ClipboardModule,
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]

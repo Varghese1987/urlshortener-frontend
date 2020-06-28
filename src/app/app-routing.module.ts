@@ -10,15 +10,13 @@ import { UserhomeComponent } from './userhome/userhome.component';
 import { UrlshortnerComponent } from './urlshortner/urlshortner.component';
 import { AuthGuard } from './auth.guard';
 import { UrlListComponent } from './url-list/url-list.component';
+import { DashBoardComponent } from './dash-board/dash-board.component';
+import { LinkReportComponent } from './link-report/link-report.component';
 
 
 const routes: Routes = [
   {
     path:"",
-    component: HomeComponent
-  },
-  {
-    path:"login",
     component:LoginComponent
   },
   {
@@ -41,15 +39,22 @@ const routes: Routes = [
     path:"userhome",
     component:UserhomeComponent,
     canActivate: [AuthGuard],
-    children :[
+    children : [
+      {
+        path:"",
+        component:DashBoardComponent,
+        canActivate: [AuthGuard],
+        children : [
+          // {
+          //   path:"linkreport/:string",
+          //   component:LinkReportComponent,
+          //   canActivate: [AuthGuard],
+          // }
+        ]
+      },
       {
         path:"shorturl",
         component:UrlshortnerComponent,
-        canActivate: [AuthGuard],
-      },
-      {
-        path:"listUrl",
-        component:UrlListComponent,
         canActivate: [AuthGuard],
       }
     ]

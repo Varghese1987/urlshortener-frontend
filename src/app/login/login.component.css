@@ -1,0 +1,19 @@
+.cont1{
+    width:100%;
+    height:100vh;
+	background: rgb(92,4,193);
+	background: linear-gradient(45deg, rgba(92,4,193,1) 0%, rgba(3,137,206,1) 57%, rgba(0,212,255,1) 100%);
+	overflow: hidden;
+	font-family: 'Roboto', sans-serif;
+	color: white;
+}
+.landing{
+	background: white;
+	border-radius: 10px;
+	box-sizing: border-box;
+	-webkit-box-shadow: 10px 10px 58px -1px rgba(77,92,250,1);
+	-moz-box-shadow: 10px 10px 58px -1px rgba(77,92,250,1);
+	box-shadow: 10px 10px 58px -1px rgba(77,92,250,1);
+	padding: 40px;
+	color: black;
+}

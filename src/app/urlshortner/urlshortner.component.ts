@@ -31,11 +31,11 @@ urlForm: FormGroup;
   ngOnInit(){
     this.userService.location().subscribe(data=>{
       this.locationAndOtherDetails = data;
-      console.log(this.locationAndOtherDetails)
+      // console.log(this.locationAndOtherDetails)
       let day = new Date();
       this.date = moment(day).format("DD/MM/YYYY");
-      console.log(this.date)
-      console.log(localStorage.responseToken)
+      // console.log(this.date)
+      // console.log(localStorage.responseToken)
     });
   }
 

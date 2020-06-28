@@ -1,13 +1,26 @@
-<div class="container-fluid">    
+<div class="container-fluid" style = "padding-top: 2%">    
     <div class="row">
-        <div class="col-lg-5">
-            <div class=""*ngFor = "let data of urlList | async">
-                <div class="card-body card bg-dark text-white">
+        <div class="col-lg-6">
+            <div class="">
+                <h3>Your Converted Links Listed Here</h3>
+            </div>            
+            <div class=""*ngFor = "let data of urlList | async" >
+                <!-- <div class="card-body card bg-dark text-white" [routerLink] = "['/userhome/linkreport/',data._id]"> -->
+                <div class="card-body card bg-dark text-white" (click)="onUpdateChild(data._id)">
                     <h6 class="card-title">Long Url : {{data.longUrl}}</h6>
-                    <h6 class="card-title">Short Url : {{data.shortUrl}}</h6>
-                    <h6 class="card-title">Hits : {{data.hit}}</h6>        
+                    <div class="row">
+                        <div class="clo-lg-10" style = "padding-left: 2%">
+                            <i class=""><p class="card-title">Short Url : {{data.shortUrl}}</p></i>
+                        </div>
+                        <div class="col-lg-2">
+                            <h6 class="card-title">Hits : {{data.hit.length}}</h6>        
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
+        <div class="col-lg-6">
+            <app-link-report *ngIf="showChild"></app-link-report>
         </div>
     </div>
 </div>
