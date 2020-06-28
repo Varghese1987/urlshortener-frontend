@@ -31,7 +31,7 @@ export class ResetpwdComponent implements OnInit {
   reset(){
     this.userservice.updatepwd(this.pwdForm.value,this.activatedRoute.snapshot.params.string).subscribe((response)=>{
       //console.log(response);
-      this.toastr.success(response.message);
+      this.toastr.success(response.message );
       this.router.navigate(["/"]);
     })
   }
