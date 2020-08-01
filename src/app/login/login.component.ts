@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
     private fb:FormBuilder, 
     private userService : UserService, 
     private router : Router,
-    private toastr : ToastrService
+    private toastr : ToastrService 
     ) {
     this.loginForm = this.fb.group({
       email:this.fb.control("",[Validators.required,Validators.email]),
